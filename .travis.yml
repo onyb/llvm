@@ -14,6 +14,7 @@ addons:
     packages:
       - build-essential
       - binutils-gold
+      - libstdc++6
 
 before_script:
 - git config --global user.email "ani07nov@gmail.com"
