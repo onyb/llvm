@@ -57,7 +57,9 @@ script:
   cd build
   $CMAKE -DLLVM_ENABLE_LIBCXX=ON -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=host -DCMAKE_INSTALL_PREFIX=$TMPDIR/cpt/llvm ../
   make -j$(nproc)
+  make test
   make install -j$(nproc)
+  ls $TMPDIR/cpt/llvm
 
 
 notifications:
