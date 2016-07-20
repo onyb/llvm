@@ -31,6 +31,8 @@ before_script:
     travis_retry wget --no-check-certificate -O - $CMAKE_URL | tar --strip-components=1 -xz -C $TMPDIR/cmake
 
     export CMAKE=$TMPDIR/cmake/bin/cmake
+    export CXXFLAGS="-stdlib=libc++"
+    export LDFLAGS=-lc++abi
     export CC=/usr/bin/clang-3.8
     export CXX=/usr/bin/clang++-3.8
 
@@ -43,6 +45,8 @@ before_script:
     travis_retry wget --no-check-certificate -O - $CLANG_URL | tar --strip-components=1 -xJ -C $TMPDIR/clang
 
     export CMAKE=$TMPDIR/cmake/CMake.app/Contents/bin/cmake
+    export CXXFLAGS="-stdlib=libc++"
+    export LDFLAGS=-lc++abi
     export CC=$TMPDIR/clang/bin/clang
     export CXX=$TMPDIR/clang/bin/clang++
   fi
