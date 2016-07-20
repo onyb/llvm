@@ -59,6 +59,7 @@ script:
   make -j$(nproc)
   make test
   make install -j$(nproc)
+
   ls $TMPDIR/cpt/llvm
 
 
